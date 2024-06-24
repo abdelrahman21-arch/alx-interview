@@ -82,6 +82,7 @@ if __name__ == '__main__':
                 total_file_size += int(d[1])
             else:
                 stderr.write("Cannot Read From Empty File.")
+                break
 
             if line_no % 10 == 0:
                 print_log_totals(total_file_size, code_counts)
