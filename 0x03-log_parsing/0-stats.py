@@ -43,9 +43,11 @@ def extract_input(input_line):
         file_size = int(resp_match.group('file_size'))
         if file_size == 0:
             print("empty file")
-            return
+            pass
+        else:
+            info['file_size'] = file_size
         info['status_code'] = status_code
-        info['file_size'] = file_size
+
     return info
 
 
