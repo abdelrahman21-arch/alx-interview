@@ -78,8 +78,10 @@ if __name__ == '__main__':
                 code_counts[code] += 1
 
             # checking file size (invalid sizes skipped without error)
-            if d[1].isdecimal():
+            if d[1].isdecimal() and d[1] != 0:
                 total_file_size += int(d[1])
+            else:
+                stderr.write("Cannot Read From Empty File.")
 
             if line_no % 10 == 0:
                 print_log_totals(total_file_size, code_counts)
