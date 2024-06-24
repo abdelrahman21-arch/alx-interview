@@ -89,7 +89,6 @@ if __name__ == '__main__':
                 break
 
             if line_no % 10 == 0:
-                print("10 lines passed!!!!!!!\n")
                 if occurence_200s % 10 == 0:
                     print("consecutive 200s Abort")
                     break
