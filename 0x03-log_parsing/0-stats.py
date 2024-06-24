@@ -35,6 +35,7 @@ if __name__ == '__main__':
     from collections import OrderedDict
     from datetime import datetime
 
+    occurence_200s = 0
     line_no = 0
     total_file_size = 0
     code_counts = OrderedDict.fromkeys([200, 301, 400, 401, 403,
@@ -75,7 +76,10 @@ if __name__ == '__main__':
             # checking status code (invalid codes skipped without error)
             if d[0].isdecimal():
                 code = int(d[0])
-                code_counts[code] += 1
+                if code == 200:
+                    occurence_200s += 1
+                else:
+                    code_counts[code] += 1
 
             # checking file size (invalid sizes skipped without error)
             if d[1].isdecimal() and int(d[1]) != 0:
@@ -85,7 +89,12 @@ if __name__ == '__main__':
                 break
 
             if line_no % 10 == 0:
-                print_log_totals(total_file_size, code_counts)
+                if occurence_200s % 10 == 0:
+                    print("consecutive 200s Abort")
+                    break
+                else:
+                    print_log_totals(total_file_size, code_counts)
+
         print_log_totals(total_file_size, code_counts)
 
     except (KeyboardInterrupt):
