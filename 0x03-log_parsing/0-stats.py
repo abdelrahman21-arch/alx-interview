@@ -39,11 +39,11 @@ def extract_input(input_line):
     log_fmt = '{}\\-{}{}{}{}\\s*'.format(fp[0], fp[1], fp[2], fp[3], fp[4])
     resp_match = re.fullmatch(log_fmt, input_line)
     if resp_match is not None:
-        if fp[4] == 0:
-            print("empty file")
-            return
         status_code = resp_match.group('status_code')
         file_size = int(resp_match.group('file_size'))
+        if file_size == 0:
+            print("empty file")
+            return
         info['status_code'] = status_code
         info['file_size'] = file_size
     return info
