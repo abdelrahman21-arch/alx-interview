@@ -81,7 +81,7 @@ if __name__ == '__main__':
             if d[1].isdecimal() and int(d[1]) != 0:
                 total_file_size += int(d[1])
             else:
-                stderr.write("Cannot Read From Empty File.")
+                stderr.write("Cannot Read From Empty File.\n")
                 break
 
             if line_no % 10 == 0:
