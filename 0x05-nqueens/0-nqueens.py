@@ -46,8 +46,6 @@ class SolveNqueen:
                 pos_diag.remove(r + c)
                 neg_diag.remove(r - c)
                 queens.pop()
-
-
         backtrack(0)
 
         return solutions
