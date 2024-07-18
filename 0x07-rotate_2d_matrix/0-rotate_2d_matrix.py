@@ -1,4 +1,4 @@
-#!/usr/bin/python
+#!/usr/bin/python3
 """rotate 2d matrix by 90 degrees"""
 
 
