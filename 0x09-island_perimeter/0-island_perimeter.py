@@ -1,3 +1,4 @@
+#!/usr/bin/python3
 """Island perimeter - Dfs approach"""
 
 def island_perimeter(grid: [[int]]) -> int:
