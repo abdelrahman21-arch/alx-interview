@@ -29,4 +29,4 @@ def island_perimeter(grid: [[int]]) -> int:
         for j in range(len(grid[0])):
             if grid[i][j]:
                 return dfs(i, j)
-    return 0 # in case of all water
+    return 0  # in case of all water
