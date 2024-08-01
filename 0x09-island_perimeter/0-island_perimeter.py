@@ -8,6 +8,9 @@ def island_perimeter(grid: [[int]]) -> int:
     :param grid: 2-D array grid for Dfs 1s land 0 water
     :return: perimter of 1s (the island)
     """
+    if not grid or not grid[0]:
+        return 0
+
     visited = set()
 
     def dfs(i, j):
@@ -26,3 +29,4 @@ def island_perimeter(grid: [[int]]) -> int:
         for j in range(len(grid[0])):
             if grid[i][j]:
                 return dfs(i, j)
+    return 0 # in case of all water
