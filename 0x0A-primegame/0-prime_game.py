@@ -1,3 +1,7 @@
+#!/usr/bin/python3
+"""0. Prime Game - Maria and Ben are playing a game"""
+
+
 def isWinner(x, nums):
     """x - rounds
     nums - numbers list
@@ -36,4 +40,3 @@ def rm_multiples(ls, x):
             ls[i * x] = 0
         except (ValueError, IndexError):
             break
-        
